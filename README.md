@@ -2,6 +2,8 @@
 
 This repository contains a collection of AI-powered mini applications designed to demonstrate various functionalities and capabilities using Python.
 
+You can test it live on https://ayyandu.pythonanywhere.com
+
 ## Overview
 
 The repository comprises four distinct mini applications:
