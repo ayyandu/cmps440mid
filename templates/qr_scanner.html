@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scan QR Code</title>
+    <style>
+        #video {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            display: block;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scan QR Code</h1>
+    <video id="video" playsinline></video>
+    <div id="output"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/zxing-typescript@0.0.3/umd/index.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.getElementById('video');
+            const output = document.getElementById('output');
+            let selectedDeviceId;
+
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
+                .then((stream) => {
+                    video.srcObject = stream;
+                    const { deviceId } = stream.getTracks()[0].getSettings();
+                    selectedDeviceId = deviceId;
+                })
+                .catch((error) => {
+                    console.error('Error accessing the camera:', error);
+                });
+
+            const codeReader = new ZXing.BrowserQRCodeReader();
+            codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, error) => {
+                if (result) {
+                    output.textContent = `Scanned QR code data: ${result.text}`;
+                    // You can perform actions with the decoded data here, such as deducting the balance
+                }
+                if (error) {
+                    console.error('Error decoding QR code:', error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+

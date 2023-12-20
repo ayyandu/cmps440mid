@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style>
+        .container {
+            position: relative;
+            text-align: center;
+        }
+        .overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Result</h1>
+    <div class="container">
+        <img src="{{ url_for('static', filename=image_file) }}" alt="Uploaded Image">
+        <div class="overlay">
+            <h2>Predicted Labels:</h2>
+            <ul>
+                {% for prediction in result['predictions'] %}
+                    <li>{{ prediction['class'] }}</li>
+                {% endfor %}
+            </ul>
+            {% for prediction in result['predictions'] %}
+                {% if prediction['class'] == 'VISA' %}
+                    <p>You have a 15% discount!</p>
+                {% elif prediction['class'] == 'MasterCard' %}
+                    <p>You have a 25% discount!</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

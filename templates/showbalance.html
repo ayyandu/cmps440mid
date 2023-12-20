@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Processing Result</title>
+    <style>
+        /* Custom 8-bit Toll Plaza style */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .result-container {
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .toll-header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .success {
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        .error {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        .thank-you-message,
+        .drive-safe-message,
+        h2,
+        .success,
+        .error {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            margin-top: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="result-container">
+        <div class="toll-header">
+            Toll Plaza
+        </div>
+        <h2>Automated Payment</h2>
+        <p>
+            {% if message %}
+            <span class="{% if success %}success{% else %}error{% endif %}">
+                {{ message }}
+            </span>
+            {% endif %}
+        </p>
+        <p class="thank-you-message">
+            Thank You for Paying with QR
+        </p>
+        <p class="drive-safe-message">
+            Drive Safe!
+        </p>
+    </div>
+</body>
+
+</html>

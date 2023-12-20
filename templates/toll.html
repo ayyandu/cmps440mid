@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Toll Management System</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            min-height: 70px;
+            border-bottom: #ddd 1px solid;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 2.5em;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .content a {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .content a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Media Query for Mobile */
+        @media screen and (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .content p {
+                font-size: 1em;
+                margin-bottom: 10px;
+            }
+
+            .content a {
+                font-size: 1em;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to Toll Plaza System</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <p>Welcome to the Toll Plaza System. Choose an option:</p>
+            <p><a href="/generate_tag">Generate a new Toll Tag</a></p>
+            <p><a href="/admin">Access the Admin Panel</a></p>
+            <p><a href="/qr_upload">Make Toll Payment</a></p>
+            <p><a href="/balance">Check Available Balance</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
+

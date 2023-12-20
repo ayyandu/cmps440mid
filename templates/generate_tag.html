@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Toll Tag</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label,
+        input {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"] {
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            background-color: transparent;
+            color: #fff;
+            font-size: 1.2em;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.8em;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Generate New Toll Tag</h1>
+        <form action="/generate_tag" method="post">
+            <label for="tag_number">Tag Number:</label>
+            <input type="text" id="tag_number" name="tag_number" required><br><br>
+
+            <label for="initial_balance">Initial Balance:</label>
+            <input type="number" id="initial_balance" name="initial_balance" required><br><br>
+
+            <input type="submit" value="Generate">
+        </form>
+
+        {% if tag_number %}
+        <h2>QR Code for Tag Number: {{ tag_number }}</h2>
+        <img src="{{ url_for('get_qr', tag_number=tag_number) }}" alt="QR Code">
+        {% endif %}
+    </div>
+</body>
+
+</html>

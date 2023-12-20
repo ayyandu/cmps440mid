@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Processing Result</title>
+    <style>
+        /* Styles for the body and form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        /* Styles for the images */
+        img {
+            max-width: 100%;
+            max-height: 70vh; /* Set a maximum height */
+            width: auto;
+            height: auto;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        /* Additional styles to enable scrolling for large images */
+        .images-container {
+            overflow-y: auto;
+            max-height: 70vh; /* Adjust this value as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>Result</h1>
+
+    <!-- Dropdown for image processing options -->
+    <form action="/process_image" method="post">
+        <label for="action">Choose an image processing option:</label>
+        <select name="action" id="action">
+            <option value="original">Original Image</option>
+            <option value="blur">Blur</option>
+            <option value="sharpen">Sharpen</option>
+            <option value="emboss">Emboss</option>
+        </select>
+        <input type="hidden" name="filename" value="{{ filename }}">
+        <br><br>
+        <input type="submit" value="Apply">
+    </form>
+
+    <!-- Display Images within a container for scrolling -->
+    <div class="images-container">
+        {% if processed_image %}
+            <h3>Uploaded Image:</h3>
+            <img src="{{ url_for('static', filename=filename) }}" alt="Uploaded Image">
+            <h3>Processed Image:</h3>
+            <img src="{{ url_for('static', filename=processed_image) }}" alt="Processed Image">
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+

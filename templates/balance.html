@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Upload QR Code</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"],
+        input[type="submit"] {
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            background-color: transparent;
+            color: #fff;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upload QR Code</h1>
+        <form action="/process_balance" method="post" enctype="multipart/form-data">
+            <input type="file" accept="image/*" name="qr_code" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>

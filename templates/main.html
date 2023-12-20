@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMPS-440 Project</title>
+  <style>
+    /* CSS styles */
+    body, h1, h2, h3, h4, h5, h6, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+
+    header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      text-align: center;
+      padding: 40px 0;
+      font-size: 3em;
+      letter-spacing: 2px;
+      border-bottom: 2px solid #444;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 15px 0;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(to right, #ff4e50, #f9d423);
+      border-radius: 25px;
+      transition: background-color 0.3s ease;
+      border: none;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .button:hover {
+      background: linear-gradient(to right, #fc6076, #ff9a44);
+    }
+
+    /* Media Query for Mobile */
+    @media screen and (max-width: 600px) {
+      header {
+        font-size: 2.5em;
+      }
+
+      .button {
+        padding: 12px 25px;
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mini Apps by Ayyan</h1>
+  </header>
+
+  <main>
+    <div class="links">
+      <a href="/toll" class="button">Automated Toll Management</a>
+      <a href="/u" class="button">Advanced Image Processing</a>
+      <a href="/card" class="button">Bank Card AI Detection</a>
+      <a href="/traffic" class="button">Ambulance Traffic Signal</a>
+    </div>
+  </main>
+</body>
+</html>

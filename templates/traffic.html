@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Signal</title>
+</head>
+<body>
+    <h1>Traffic Signal Control</h1>
+    <img id="signal" src="{{ signal }}" alt="Traffic Signal">
+    <form action="/signal" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
