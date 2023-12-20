@@ -25,13 +25,11 @@ The repository comprises four distinct mini applications:
 ## Installation and Usage
 
 ### Requirements
-- Python (version X.X.X)
-- Additional libraries mentioned in each application's respective folder
+- Python
+- Additional libraries such as Flask, opencv-python, roboflow, qrcode, zxing, pillow.
 
 ### Setup and Usage Instructions
-1. Clone this repository: `git clone https://github.com/yourusername/your-repo.git`
+1. Clone this repository: `git clone https://github.com/ayyandu/cmps440mid.git`
 2. Navigate to the desired application folder.
-3. Follow the instructions in each application's `README.md` for setup and usage specifics.
-
-## Folder Structure
+3. Create a virtual environemnt using Visual Studio Code and then install the required packages.
 
